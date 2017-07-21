@@ -1,0 +1,21 @@
+{
+  "name": "ejs_website",
+  "version": "1.0.0",
+  "description": "Sample site using ejs by sujith babu",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "ejs",
+    "template"
+  ],
+  "author": "Sujith Babu",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3"
+  }
+}
