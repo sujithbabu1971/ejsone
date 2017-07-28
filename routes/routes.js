@@ -33,3 +33,4 @@ module.exports.cityFn = function cityInternalFn(req,res)
 	res.render("city.ejs", {"title": cityName,
 	"headLine":headLineValue});
 }
+

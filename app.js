@@ -2,7 +2,9 @@ var exp = require("express");
 var app = new exp();
 
 var port = process.env.PORT||4000;
-
+// This folder is the one from the static files are served. 
+// By default, the index.html is the index file
+app.use(exp.static(__dirname+ "/public"));
 // Setting the template engine
 app.set("view engine", exp);
 app.listen(port, listenFn);
@@ -15,6 +17,6 @@ function listenFn() {
 	console.log("Server is running on port "+port);
 }
 
-app.get("/", routers.homeFn);
-app.get("/:city", routers.cityFn);
+app.get("/home", routers.homeFn);
+app.get("/city/:city", routers.cityFn);
 
