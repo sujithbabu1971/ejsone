@@ -9,7 +9,9 @@ app.use(exp.static(__dirname+ "/public"));
 // By default it seems to be ejs anyway
 // Refer template engine section in https://github.com/expressjs/express/wiki
 // for all available template engines.
+
 app.set("view engine", "ejs");
+
 app.listen(port, listenFn);
 
 // . is neede for relative path to the current folder.
