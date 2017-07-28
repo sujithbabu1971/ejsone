@@ -5,7 +5,10 @@ var port = process.env.PORT||4000;
 // This folder is the one from the static files are served. 
 // By default, the index.html is the index file
 app.use(exp.static(__dirname+ "/public"));
-// Setting the template engine
+// Setting the template  view engine
+// By default it seems to be ejs anyway
+// Refer template engine section in https://github.com/expressjs/express/wiki
+// for all available template engines.
 app.set("view engine", exp);
 app.listen(port, listenFn);
 
