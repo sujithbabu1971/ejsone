@@ -1,4 +1,6 @@
 var exp = require("express");
+var chalk = require("chalk");
+
 var app = new exp();
 
 var port = process.env.PORT||4000;
@@ -24,4 +26,14 @@ function listenFn() {
 
 app.get("/home", routers.homeFn);
 app.get("/city/:city", routers.cityFn);
+// For those mateche with any URL
+app.use(function(req, res) {
+	console.log(chalk.red("Error: 404 for path "+req.path));
+    res.status(404).render('404',{"path":req.path});
+});
+
+app.use(function(error, req, res, next) {
+    console.log(chalk.red('Error : 500'+error))
+    res.status(500).render('500',{error:error});
+});
 
